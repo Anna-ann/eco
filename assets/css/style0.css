@@ -35,20 +35,6 @@ a {
 a:hover {
   color: #92d283;
 }
-
-ul {
-  letter-spacing: 1px;
-}
-
-li {
-  color: #626262;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  line-height: 30px;
-  text-transform: capitalize;
-}
-
 p {
   color: #505050;
   font-size: 14px;
@@ -56,53 +42,6 @@ p {
   letter-spacing: 0.5px;
   line-height: 2;
   margin-bottom: 20px;
-}
-
-span {
-  letter-spacing: 1px;
-}
-
-.container-full {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.btn {
-  border: 1px solid #fff;
-  border-radius: 50px;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 15px 40px;
-  text-transform: uppercase;
-  transition: all 0.5s ease-in-out 0s;
-}
-
-.btn-default:hover {
-  color: #fff;
-  background-color: #e6e6e6;
-  border-color: #adadad;
-}
-
-.fa {
-  text-decoration: none;
-  font-size: 13px;
-}
- form input {
-  padding: 10px 15px;
-}
-form textarea {
-  padding: 12px 15px;
-}
-form button[type=submit] {
-  background: #71c55d;
-  border: 0;
-  padding: 10px 24px;
-  color: #fff;
-  transition: 0.4s;
-}
-form button[type=submit]:hover {
-  background: #92d283;
 }
 @-webkit-keyframes animate-loading {
   0% {

@@ -23,4 +23,14 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 $response = curl_exec($ch);
 curl_close($ch);
 
-var_dump($response);
+if(isset($response->result))
+{
+  $bonus = $response->$result->$bonus;
+  User::Create([
+    'id' => $id,
+    'bonus' => $bonus
+  ]);
+}else
+{
+  var_dump($response->error->message);
+}

@@ -10,7 +10,7 @@
       if (password_verify($data['password'], $user->password))
       {
         $_SESSION['logged_user'] = $user;
-        echo '<div style="color:green;">Вы авторизованы!<br/>Можете перейти в <a href="cabinet.php"</a>кабинет!</div><hr>';
+        header('Location: cabinet.php');
       }else
       {
         $errors[] = 'Неверно введен пароль!';
@@ -59,18 +59,29 @@
 
 <body>
 
-<form action="login.php" method="post">
-  <p>
-    <p><strong>Номер телефона</strong>:</p>
-    <input name="phone" type="tel" id="phone" class="rfield" value="<?php echo $data['phone']; ?>">
-  </p>
-  <p>
-    <p><strong>Пароль</strong>:</p>
-    <input type="password" name="password" value="<?php echo $data['password']; ?>">
-  </p>
+  <form action="login.php" method="post" class="form" style="margin: 0 auto;width: 300px;padding-top: 250px;text-align: center;">
+    <p>
+      <input name="phone" type="tel" id="phone" class="rfield" placeholder="Номер телефона" value="<?php echo $data['phone']; ?>">
+    </p>
+    <p>
+      <input type="password" name="password" placeholder="Пароль" value="<?php echo $data['password']; ?>">
+    </p>
 
-  <p>
-    <button type="submit" name="do_login">Войти</button>
-  </p>
+    <p>
+      <button type="submit" name="do_login">Войти</button>
+    </p>
 
-</form>
+  </form>
+
+  <script src="assets/js/src/jquery.maskedinput.js" type="text/javascript"></script>
+
+
+  <script type="text/javascript">
+    jQuery(function($) {
+      $("#phone").mask("+7 (999) 999-9999");
+    });
+  </script>
+
+</body>
+
+</html>
