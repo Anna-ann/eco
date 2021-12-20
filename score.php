@@ -1,7 +1,7 @@
 <?php
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, "https://private-anon-ff14ca0230-ecotech.apiary-proxy.com/?method=getRequestItem&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJncm91cHNfaWQiOjIyfQ.h_7-CwxionZC5c3dbZNV42DPIBcd99xok5vDMuOPmKA
+curl_setopt($ch, CURLOPT_URL, "https://api.fandomats.ru/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJncm91cHNfaWQiOjIyfQ.h_7-CwxionZC5c3dbZNV42DPIBcd99xok5vDMuOPmKA
 ");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($ch, CURLOPT_HEADER, FALSE);

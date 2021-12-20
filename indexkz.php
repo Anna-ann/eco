@@ -1,4 +1,4 @@
-<?php require "db.php"; ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="kk">
 
@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Новогодний конкурс ZQ 2021 с Zhasyl Qalqan</title>
+  <title>Жасыл қалқанмен ZQ 2021 жаңа жылдық акциясы</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -24,7 +24,7 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <link href="assets/css/cabinet.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="assets/js/script.js" defer></script>
 </head>
@@ -36,19 +36,19 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div id="logo">
-        <a href="index.php"><img src="assets/img/logo.png" alt="" title="" /></a>
+        <a href="index.html"><img src="assets/img/logo.png" alt="" title="" /></a>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <?php if (isset($_SESSION['logged_user'])):?>
-            Привет, <?php echo $_SESSION['logged_user']->user_name; ?>!
-            <a href="logout.php">Выйти</a>
-          <?php else :  ?>
-            Вы не авторизованы!<br>
-            <a href="login.php">Авторизоваться</a>
-            <a href="index.php #participate">Зарегистрироваться</a>
-          <?php endif; ?>
+          <li><a class="nav-link scrollto" href="#hero">Басты</a></li>
+          <li><a class="nav-link scrollto" href="#about-us">Біз туралы</a></li>
+          <li><a class="nav-link scrollto" href="#features">Шарттар</a></li>
+          <li><a class="nav-link scrollto" href="#people">Қатысушылар</a></li>
+          <li><a class="nav-link scrollto" href="#map">Фандомат картасы</a></li>
+          <li><a class="nav-link scrollto" href="#participate">Қатысу</a></li>
+          <li><a class="nav-link scrollto" href="login.php">Кіру</a></li>
+          <li><a class="nav-link scrollto" href="index.php">RU</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -59,77 +59,26 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container" data-aos="fade-in">
-      <section id="cupon">
-        <form action="score.php" method="post" class="form">
-
-          <div class="form-group mt-3">
-            <input type="text" class="form-control" name="cupon" maxlength="6" style="
-    width: 300px;" placeholder="Введите буквенно-цифровой код" value="<?php echo $data['cupon']; ?>">
-          </div>
-          <div class="text-center">
-            <button type="submit" name="do_signup" style="
-            font-family: &quot;Roboto&quot;, sans-serif;
-            text-transform: uppercase;
-            font-weight: 400;
-            font-size: 13px;
-            letter-spacing: 1px;
-            display: inline-block;
-            padding: 11px 36px;
-            border-radius: 50px;
-            transition: 0.5s;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            border: 2px solid #71c55d;
-            background: #fff;
-            color: #71c55d;
-            text-decoration: none;
-            ">Добавить
-          </button>
-        </div>
-      </form>
-    </section>
-      <section id="people" class="padd-section text-center">
-
-        <div class="container" data-aos="fade-up">
-          <div class="section-title text-center">
-            <h2>Участники</h2>
-          </div>
-
-          <table class="content-table">
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Имя</th>
-                <th>Баллы</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Domenic</td>
-                <td>88,110</td>
-              </tr>
-              <tr class="active-row">
-                <td>2</td>
-                <td>Sally</td>
-                <td>72,400</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Nick</td>
-                <td>52,300</td>
-              </tr>
-            </tbody>
-          </table>
-
-
-        </div>
-
-      </section>
-
+      <img src="assets/img/hero-img.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
+      <h1>Тараны өткізіңіз</h1>
+      <h2>сыйлықтар алыңыз</h2>
+      <a href="#participate" class="btn-get-started scrollto">Конкурсқа ҚАТЫСЫҢЫЗ</a>
     </div>
   </section><!-- End Hero Section -->
 
+  <main id="main">
+
+    <?php include 'about-uskz.php'; ?>
+
+    <?php include 'featureskz.php'; ?>
+
+    <?php include 'peoplekz.php'; ?>
+
+    <?php include 'mapkz.php'; ?>
+
+    <?php include 'participatekz.php'; ?>
+
+  </main>
 
   <footer class="footer">
     <div class="container">
@@ -138,7 +87,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="download">
 
-            <h2 class="navbar-brand" href="#">Загрузите приложение</h2>
+            <h2 class="navbar-brand" href="#">Приложенияны жүктеп алыңыз</h2>
             <a href="https://apps.apple.com/us/app/zhasyl-qalqan/id1475748173?l=ru&ls=1"><img src="assets/img/apple.png" alt=""></a>
             <a href="https://play.google.com/store/apps/details?id=project.irokez.kg.zhasylqalqan"><img src="assets/img/Google.png" style="width: 128px;"></a>
 
@@ -183,8 +132,8 @@
 
 
   <script type="text/javascript">
-    jQuery(function($) {
-      $("#phone").mask("+7 (999) 999-9999");
+    jQuery(function($){
+       $("#phone").mask("+7 (999) 999-9999");
     });
   </script>
 

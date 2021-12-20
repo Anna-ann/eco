@@ -48,6 +48,7 @@
           <li><a class="nav-link scrollto" href="#map">Карта фандоматов</a></li>
           <li><a class="nav-link scrollto" href="#participate">Участвовать</a></li>
           <li><a class="nav-link scrollto" href="login.php">Войти</a></li>
+          <li><a class="nav-link scrollto" href="indexkz.php">KZ</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

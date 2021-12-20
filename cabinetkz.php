@@ -1,12 +1,12 @@
 <?php require "db.php"; ?>
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="ru">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Новогодний конкурс ZQ 2021 с Zhasyl Qalqan</title>
+  <title>Жасыл қалқанмен ZQ 2021 жаңа жылдық акциясы</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -42,12 +42,12 @@
       <nav id="navbar" class="navbar">
         <ul>
           <?php if (isset($_SESSION['logged_user'])):?>
-            Привет, <?php echo $_SESSION['logged_user']->user_name; ?>!
-            <a href="logout.php">Выйти</a>
+            Сәлеметсіз бе, <?php echo $_SESSION['logged_user']->user_name; ?>!
+            <a href="logout.php">Шығу</a>
           <?php else :  ?>
-            Вы не авторизованы!<br>
-            <a href="login.php">Авторизоваться</a>
-            <a href="index.php #participate">Зарегистрироваться</a>
+            Тіркелмегенсіз!<br>
+            <a href="login.php">Кіру</a>
+            <a href="index.php #participate">Тіркелу</a>
           <?php endif; ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -64,7 +64,7 @@
 
           <div class="form-group mt-3">
             <input type="text" class="form-control" name="cupon" maxlength="6" style="
-    width: 300px;" placeholder="Введите буквенно-цифровой код" value="<?php echo $data['cupon']; ?>">
+    width: 300px;" placeholder="Әріптік-сандық кодты енгізіңіз" value="<?php echo $data['cupon']; ?>">
           </div>
           <div class="text-center">
             <button type="submit" name="do_signup" style="
