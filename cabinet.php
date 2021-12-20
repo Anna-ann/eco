@@ -1,6 +1,30 @@
-<?php require "db.php"; ?>
+<?php require "db.php";
+$data = $_POST;
+if ( isset($data['do_sign']) )
+{
+  $errors = array();
+
+  if (R::count('cupon', "cupon = ?", array($data['cupon'])) > 0 )
+  {
+    $errors[] = 'Купон с таким номером уже существует';
+  }
+  if (empty($errors))
+  {
+    $user = R::dispense('cupon');
+    $_SESSION['logged_user']->user_name;
+    $user->cupon = $data['cupon'];
+    R::store($user);
+  }else
+  {
+    echo '<div style="color:red;">'.array_shift($errors).'</div><hr>';
+  }
+}
+
+
+
+  ?>
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="ru">
 
 <head>
   <meta charset="utf-8">
@@ -60,14 +84,14 @@
   <section id="hero">
     <div class="hero-container" data-aos="fade-in">
       <section id="cupon">
-        <form action="score.php" method="post" class="form">
+        <form action="cabinet.php" method="post" class="form">
 
           <div class="form-group mt-3">
             <input type="text" class="form-control" name="cupon" maxlength="6" style="
     width: 300px;" placeholder="Введите буквенно-цифровой код" value="<?php echo $data['cupon']; ?>">
           </div>
           <div class="text-center">
-            <button type="submit" name="do_signup" style="
+            <button type="submit" name="do_sign" style="
             font-family: &quot;Roboto&quot;, sans-serif;
             text-transform: uppercase;
             font-weight: 400;
